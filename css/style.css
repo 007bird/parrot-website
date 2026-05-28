@@ -1,0 +1,439 @@
+/* ===== 基礎樣式設定 ===== */
+
+/* 設定全域樣式 */
+* {
+    /* 邊界外的空間設定為 0 */
+    margin: 0;
+    /* 邊界內的空間設定為 0 */
+    padding: 0;
+    /* box-sizing 設定為 border-box，讓寬度計算更直觀 */
+    box-sizing: border-box;
+}
+
+/* 設定 body 的基礎樣式 */
+body {
+    /* 使用系統預設字型 */
+    font-family: '微軟正黑體', 'Arial', sans-serif;
+    /* 背景色：淡綠色 */
+    background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 100%);
+    /* 最小高度設定為視窗高度 */
+    min-height: 100vh;
+    /* 文字顏色 */
+    color: #2d5016;
+    /* 行高設定為 1.6，讓文字更易閱讀 */
+    line-height: 1.6;
+}
+
+/* ===== 容器樣式 ===== */
+
+/* 主容器 */
+.container {
+    /* 最大寬度 1200px */
+    max-width: 1200px;
+    /* 置中對齐 */
+    margin: 0 auto;
+    /* 内邊距 */
+    padding: 20px;
+}
+
+/* ===== 頁頭樣式 ===== */
+
+.header {
+    /* 背景色：鮮綠色 */
+    background: linear-gradient(135deg, #4ade80 0%, #86efac 100%);
+    /* 内邊距 */
+    padding: 40px 20px;
+    /* 圓角邊框 */
+    border-radius: 20px;
+    /* 文字居中 */
+    text-align: center;
+    /* 下方邊距 */
+    margin-bottom: 40px;
+    /* 陰影效果 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* 顏色漸層轉換 */
+    transition: transform 0.3s ease;
+}
+
+/* 滑鼠懸停在頁頭時的效果 */
+.header:hover {
+    transform: translateY(-5px);
+}
+
+/* h1 標題樣式 */
+.header h1 {
+    /* 文字大小 */
+    font-size: 48px;
+    /* 文字顏色 */
+    color: #1b4d0e;
+    /* 下方邊距 */
+    margin-bottom: 10px;
+    /* 字體粗細 */
+    font-weight: bold;
+}
+
+/* 副標題樣式 */
+.subtitle {
+    /* 文字大小 */
+    font-size: 18px;
+    /* 文字顏色 */
+    color: #166534;
+    /* 透明度 */
+    opacity: 0.9;
+}
+
+/* ===== 卡片樣式 ===== */
+
+/* 卡片基礎樣式 */
+.card {
+    /* 背景色：白色 */
+    background: white;
+    /* 圓角邊框 */
+    border-radius: 15px;
+    /* 内邊距 */
+    padding: 30px;
+    /* 下方邊距 */
+    margin-bottom: 25px;
+    /* 陰影效果 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* 過度效果 */
+    transition: all 0.3s ease;
+    /* 上邊框裝飾 - 綠色 */
+    border-top: 5px solid #4ade80;
+}
+
+/* 滑鼠懸停在卡片上時的效果 */
+.card:hover {
+    /* 向上移動 */
+    transform: translateY(-8px);
+    /* 增加陰影 */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 卡片中的 h2 標題 */
+.card h2 {
+    /* 文字大小 */
+    font-size: 28px;
+    /* 文字顏色：深綠色 */
+    color: #166534;
+    /* 下方邊距 */
+    margin-bottom: 20px;
+}
+
+/* ===== 簡介卡片 ===== */
+
+.intro-card {
+    /* 上邊框顏色改為黃色 */
+    border-top-color: #fbbf24;
+}
+
+.intro-card p {
+    /* 文字大小 */
+    font-size: 16px;
+    /* 行高 */
+    line-height: 1.8;
+    /* 文字顏色 */
+    color: #3d3d3d;
+}
+
+/* ===== 特色卡片 ===== */
+
+.features-card {
+    /* 上邊框顏色為綠色 */
+    border-top-color: #4ade80;
+}
+
+/* 特色列表樣式 */
+.feature-list {
+    /* 列表不顯示預設點 */
+    list-style: none;
+}
+
+/* 特色列表項目 */
+.feature-list li {
+    /* 下方邊距 */
+    margin-bottom: 15px;
+    /* 左邊邊距 */
+    padding-left: 30px;
+    /* 相對定位 */
+    position: relative;
+    /* 文字顏色 */
+    color: #3d3d3d;
+    /* 行高 */
+    line-height: 1.7;
+}
+
+/* 使用 ::before 偽元素添加自定義項目符號 */
+.feature-list li::before {
+    /* 內容為綠色圓點 */
+    content: "●";
+    /* 文字顏色 */
+    color: #4ade80;
+    /* 絕對定位 */
+    position: absolute;
+    /* 距左邊 10px */
+    left: 0;
+    /* 字體大小 */
+    font-size: 12px;
+}
+
+/* ===== 常見品種卡片 ===== */
+
+.breeds-card {
+    /* 上邊框顏色為黃色 */
+    border-top-color: #fbbf24;
+}
+
+/* 品種網格佈局 */
+.breed-grid {
+    /* 使用 CSS Grid */
+    display: grid;
+    /* 2 列均等寬度 */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* 列間距 */
+    gap: 20px;
+}
+
+/* 品種項目 */
+.breed-item {
+    /* 背景色：淡綠色 */
+    background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 100%);
+    /* 内邊距 */
+    padding: 20px;
+    /* 圓角 */
+    border-radius: 12px;
+    /* 邊框 */
+    border: 2px solid #4ade80;
+    /* 過度效果 */
+    transition: all 0.3s ease;
+}
+
+/* 滑鼠懸停在品種項目上的效果 */
+.breed-item:hover {
+    /* 背景色變深 */
+    background: linear-gradient(135deg, #dcfce7 0%, #fef08a 100%);
+    /* 邊框顏色變深 */
+    border-color: #22c55e;
+}
+
+/* 品種項目中的 h3 標題 */
+.breed-item h3 {
+    /* 文字大小 */
+    font-size: 18px;
+    /* 文字顏色 */
+    color: #166534;
+    /* 下方邊距 */
+    margin-bottom: 10px;
+}
+
+/* 品種項目中的段落 */
+.breed-item p {
+    /* 文字大小 */
+    font-size: 14px;
+    /* 文字顏色 */
+    color: #4b5563;
+}
+
+/* ===== 飼養注意事項卡片 ===== */
+
+.care-card {
+    /* 上邊框顏色為綠色 */
+    border-top-color: #4ade80;
+}
+
+/* 飼養提示容器 */
+.care-tips {
+    /* 使用 Grid 佈局 */
+    display: grid;
+    /* 2 列均等寬度 */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* 列間距和行間距 */
+    gap: 20px;
+}
+
+/* 單一提示項目 */
+.tip {
+    /* 背景色：淡黃色 */
+    background: #fffbeb;
+    /* 内邊距 */
+    padding: 20px;
+    /* 圓角 */
+    border-radius: 12px;
+    /* 邊框 */
+    border-left: 4px solid #fbbf24;
+    /* 過度效果 */
+    transition: all 0.3s ease;
+}
+
+/* 滑鼠懸停在提示上的效果 */
+.tip:hover {
+    /* 背景色變深 */
+    background: #fef3c7;
+    /* 向上移動 */
+    transform: translateY(-5px);
+}
+
+/* 提示中的 h3 標題 */
+.tip h3 {
+    /* 文字大小 */
+    font-size: 16px;
+    /* 文字顏色 */
+    color: #b45309;
+    /* 下方邊距 */
+    margin-bottom: 10px;
+    /* 字體粗細 */
+    font-weight: bold;
+}
+
+/* 提示中的段落 */
+.tip p {
+    /* 文字大小 */
+    font-size: 14px;
+    /* 文字顏色 */
+    color: #92400e;
+    /* 行高 */
+    line-height: 1.6;
+}
+
+/* ===== 互動卡片和按鈕 ===== */
+
+.interactive-card {
+    /* 上邊框顏色為黃色 */
+    border-top-color: #fbbf24;
+    /* 文字居中 */
+    text-align: center;
+}
+
+.interactive-card p {
+    /* 文字大小 */
+    font-size: 16px;
+    /* 下方邊距 */
+    margin-bottom: 20px;
+    /* 文字顏色 */
+    color: #3d3d3d;
+}
+
+/* 按鈕基礎樣式 */
+.btn {
+    /* 背景色：綠色 */
+    background: linear-gradient(135deg, #4ade80 0%, #86efac 100%);
+    /* 文字顏色：深綠 */
+    color: #1b4d0e;
+    /* 邊框：無 */
+    border: none;
+    /* 内邊距 */
+    padding: 14px 32px;
+    /* 文字大小 */
+    font-size: 16px;
+    /* 圓角 */
+    border-radius: 8px;
+    /* 游標改為指標 */
+    cursor: pointer;
+    /* 字體粗細 */
+    font-weight: bold;
+    /* 過度效果 */
+    transition: all 0.3s ease;
+    /* 陰影效果 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* 下方邊距 */
+    margin-bottom: 20px;
+}
+
+/* 滑鼠懸停或點擊按鈕時的效果 */
+.btn:hover,
+.btn:active {
+    /* 背景色變深 */
+    background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+    /* 增加陰影 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* 向上移動 */
+    transform: translateY(-2px);
+}
+
+/* 按鈕按下時的效果 */
+.btn:active {
+    /* 向下移動 */
+    transform: translateY(0);
+}
+
+/* 小知識框樣式 */
+.fact-box {
+    /* 背景色：淡綠色 */
+    background: #f0fdf4;
+    /* 邊框 */
+    border: 2px solid #4ade80;
+    /* 邊框圓角 */
+    border-radius: 10px;
+    /* 内邊距 */
+    padding: 20px;
+    /* 最小高度 */
+    min-height: 80px;
+    /* 文字大小 */
+    font-size: 16px;
+    /* 文字顏色 */
+    color: #166534;
+    /* 行高 */
+    line-height: 1.8;
+    /* 過度效果 */
+    transition: all 0.3s ease;
+    /* 預設隱藏內容 */
+    opacity: 0;
+    /* 預設高度為 0 */
+    max-height: 0;
+    /* 內容超出時隱藏 */
+    overflow: hidden;
+}
+
+/* 小知識框顯示時的樣式 */
+.fact-box.show {
+    /* 透明度變為 1 */
+    opacity: 1;
+    /* 高度自動 */
+    max-height: 200px;
+}
+
+/* ===== 頁尾樣式 ===== */
+
+.footer {
+    /* 邊界上方 */
+    border-top: 2px solid #4ade80;
+    /* 背景色：淡綠色 */
+    background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 100%);
+    /* 内邊距 */
+    padding: 30px 20px;
+    /* 文字居中 */
+    text-align: center;
+    /* 邊界圓角 */
+    border-radius: 15px;
+    /* 上方邊距 */
+    margin-top: 40px;
+    /* 文字大小 */
+    font-size: 14px;
+    /* 文字顏色 */
+    color: #4b5563;
+}
+
+/* ===== 響應式設計 ===== */
+
+/* 當螢幕寬度小於 768px 時（平板和手機） */
+@media (max-width: 768px) {
+    /* h1 標題縮小 */
+    .header h1 {
+        font-size: 32px;
+    }
+
+    /* 卡片的 h2 標題縮小 */
+    .card h2 {
+        font-size: 22px;
+    }
+
+    /* 品種網格改為 1 列 */
+    .breed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 飼養提示改為 1 列 */
+    .care-tips {
+        grid-template-columns: 1fr;
+    }
+}

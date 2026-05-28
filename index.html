@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrot Garden - 鸚鵡介紹與飼養入門</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- ===== 固定導覽列 ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <span class="logo-icon">🦜</span>
+                <span class="logo-text">Parrot Garden</span>
+            </div>
+            
+            <!-- 導覽連結 -->
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link">鸚鵡特色</a></li>
+                <li><a href="#breeds" class="nav-link">常見品種</a></li>
+                <li><a href="#care" class="nav-link">飼養重點</a></li>
+                <li><a href="#facts" class="nav-link">小知識</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== Hero 首頁區 ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">歡迎來到鸚鵡的彩色世界</h1>
+            <p class="hero-subtitle">認識這些聰慧可愛的羽毛朋友，開啟您的飼養之旅</p>
+            <button class="hero-btn" onclick="document.getElementById('breeds').scrollIntoView({behavior: 'smooth'})">
+                探索鸚鵡品種 ↓
+            </button>
+        </div>
+        <!-- Hero 背景漸層 -->
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- ===== 主要內容區域 ===== -->
+    <div class="content-wrapper">
+
+        <!-- 鸚鵡特色區 -->
+        <section id="features" class="section features-section">
+            <div class="container">
+                <h2 class="section-title">為什麼鸚鵡如此特別？</h2>
+                <p class="section-subtitle">探索這些迷人的羽毛朋友的獨特特質</p>
+                
+                <div class="features-grid">
+                    <!-- 特色卡片 1：聰明會學習 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>聰明會學習</h3>
+                        <p>鸚鵡具有令人驚嘆的學習能力，智力相當於 4-5 歲的孩子。牠們能學習語言、理解簡單指令，甚至可以辨別顏色和形狀。</p>
+                    </div>
+                    
+                    <!-- 特色卡片 2：社交性強 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">💚</div>
+                        <h3>社交性強</h3>
+                        <p>鸚鵡是高度社交化的動物，渴望與主人互動和陪伴。牠們會表現出感情，形成深厚的情感聯繫，是優秀的伴侶。</p>
+                    </div>
+                    
+                    <!-- 特色卡片 3：羽色鮮豔 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">🌈</div>
+                        <h3>羽色鮮豔</h3>
+                        <p>鸚鵡擁有世界上最美麗的羽毛，顏色從翠綠到鮮黃、深紅等各種絢麗色彩，每一隻都是自然藝術的傑作。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常見品種區 -->
+        <section id="breeds" class="section breeds-section">
+            <div class="container">
+                <h2 class="section-title">常見的鸚鵡品種</h2>
+                <p class="section-subtitle">認識四種適合初學者的鸚鵡品種</p>
+                
+                <div class="breeds-grid">
+                    <!-- 品種 1：虎皮鸚鵡 -->
+                    <div class="breed-card">
+                        <div class="breed-image">
+                            <div class="breed-emoji">🟡🟢</div>
+                        </div>
+                        <div class="breed-content">
+                            <h3 class="breed-name">虎皮鸚鵡</h3>
+                            <div class="breed-difficulty">
+                                <span class="difficulty-label">適合程度</span>
+                                <span class="difficulty-badge easy">初學者最佳</span>
+                            </div>
+                            <p class="breed-intro">
+                                體型小巧可愛，顏色豐富多彩。性格活潑好動，叫聲響亮，適合家庭飼養。壽命 5-8 年，是入門首選。
+                            </p>
+                            <ul class="breed-features">
+                                <li>✓ 體型最小，易於照顧</li>
+                                <li>✓ 價格經濟實惠</li>
+                                <li>✓ 容易馴化和互動</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 品種 2：玄鳳鸚鵡 -->
+                    <div class="breed-card">
+                        <div class="breed-image">
+                            <div class="breed-emoji">🟠🟡</div>
+                        </div>
+                        <div class="breed-content">
+                            <h3 class="breed-name">玄鳳鸚鵡</h3>
+                            <div class="breed-difficulty">
+                                <span class="difficulty-label">適合程度</span>
+                                <span class="difficulty-badge beginner">初學者友善</span>
+                            </div>
+                            <p class="breed-intro">
+                                頭頂有優雅的黃色冠羽，面頰帶紅色。性情溫和，叫聲優美，喜歡吹口哨。壽命 15-20 年。
+                            </p>
+                            <ul class="breed-features">
+                                <li>✓ 性格溫和友善</li>
+                                <li>✓ 能學習吹口哨</li>
+                                <li>✓ 尾羽優雅漂亮</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 品種 3：和尚鸚鵡 -->
+                    <div class="breed-card">
+                        <div class="breed-image">
+                            <div class="breed-emoji">💚💛</div>
+                        </div>
+                        <div class="breed-content">
+                            <h3 class="breed-name">和尚鸚鵡</h3>
+                            <div class="breed-difficulty">
+                                <span class="difficulty-label">適合程度</span>
+                                <span class="difficulty-badge intermediate">有經驗最佳</span>
+                            </div>
+                            <p class="breed-intro">
+                                綠色與黃色相間，體型中等。性格聰慧活潑，學習能力強，會學習說話。壽命 20-30 年。
+                            </p>
+                            <ul class="breed-features">
+                                <li>✓ 能學習說話單字</li>
+                                <li>✓ 社交性特別強</li>
+                                <li>✓ 個性獨立自主</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 品種 4：金剛鸚鵡 -->
+                    <div class="breed-card">
+                        <div class="breed-image">
+                            <div class="breed-emoji">❤️🟡</div>
+                        </div>
+                        <div class="breed-content">
+                            <h3 class="breed-name">金剛鸚鵡</h3>
+                            <div class="breed-difficulty">
+                                <span class="difficulty-label">適合程度</span>
+                                <span class="difficulty-badge experienced">經驗飼養者</span>
+                            </div>
+                            <p class="breed-intro">
+                                體型最大，羽色絢麗，以紅色和黃色為主。性格溫和但需要充足空間。壽命可達 50 年以上。
+                            </p>
+                            <ul class="breed-features">
+                                <li>✓ 羽色最絢麗美麗</li>
+                                <li>✓ 長壽陪伴 50+ 年</li>
+                                <li>✓ 性格溫柔親人</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 飼養重點區 -->
+        <section id="care" class="section care-section">
+            <div class="container">
+                <h2 class="section-title">飼養重點須知</h2>
+                <p class="section-subtitle">照顧好您的羽毛朋友，需要注意這些要點</p>
+                
+                <div class="care-grid">
+                    <!-- 飲食 -->
+                    <div class="care-card">
+                        <div class="care-icon">🍎</div>
+                        <h3>飲食營養</h3>
+                        <p>
+                            提供高品質的鸚鵡飼料、新鮮蔬果和堅果。定期供應蘋果、胡蘿蔔、葡萄等。避免鹽份、油脂和巧克力。確保每日有乾淨飲水。
+                        </p>
+                    </div>
+
+                    <!-- 環境 -->
+                    <div class="care-card">
+                        <div class="care-icon">🏠</div>
+                        <h3>居住環境</h3>
+                        <p>
+                            提供寬敞舒適的鳥籠或飛行室。保持室溫 20-25°C，避免太陽直射。定期清潔環境，提供棲木和玩具。避免煙霧和有害氣體。
+                        </p>
+                    </div>
+
+                    <!-- 陪伴 -->
+                    <div class="care-card">
+                        <div class="care-icon">💬</div>
+                        <h3>日常陪伴</h3>
+                        <p>
+                            鸚鵡需要每日 2-4 小時的互動時間。提供各種玩具以保持心智活躍。與牠們交談、唱歌或教牠們技巧。充足的陪伴能提升牠們的幸福感。
+                        </p>
+                    </div>
+
+                    <!-- 安全 -->
+                    <div class="care-card">
+                        <div class="care-icon">⚠️</div>
+                        <h3>安全注意</h3>
+                        <p>
+                            避免讓鸚鵡接觸農藥、香氛劑和非粘性炊具。定期檢查健康狀況，異常行為應立即就醫。不要暴露在極端溫度。建立安全的活動空間。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 小知識互動區 -->
+        <section id="facts" class="section facts-section">
+            <div class="container">
+                <h2 class="section-title">鸚鵡冷知識</h2>
+                <p class="section-subtitle">每次點擊都會獲得一則有趣的鸚鵡知識</p>
+                
+                <div class="facts-box">
+                    <button id="factBtn" class="fact-btn">✨ 抽一則鸚鵡小知識</button>
+                    <div id="factDisplay" class="fact-display">
+                        <p>點擊上方按鈕或按 Enter 鍵，發現鸚鵡的有趣知識！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ===== 頁尾 ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Parrot Garden</h4>
+                    <p>用愛心和耐心照顧我們的羽毛朋友，建立美好的伴侶關係。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速連結</h4>
+                    <ul>
+                        <li><a href="#features">鸚鵡特色</a></li>
+                        <li><a href="#breeds">常見品種</a></li>
+                        <li><a href="#care">飼養重點</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>聯絡我們</h4>
+                    <p>Email: hello@parrotgarden.com</p>
+                    <p>© 2026 Parrot Garden. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 連接 JavaScript 檔案 -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
