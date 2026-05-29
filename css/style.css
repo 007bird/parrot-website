@@ -1,439 +1,729 @@
-/* ===== 基礎樣式設定 ===== */
+/* ======================================
+   Parrot Garden - 現代可愛鸚鵡介紹網站
+   綠色、黃色、奶油色系設計
+   ====================================== */
 
-/* 設定全域樣式 */
+/* ===== CSS 變數定義 ===== */
+:root {
+    --primary-green: #10b981;
+    --light-green: #d1fae5;
+    --lighter-green: #ecfdf5;
+    --dark-green: #065f46;
+    --primary-yellow: #fbbf24;
+    --light-yellow: #fef3c7;
+    --lighter-yellow: #fffbeb;
+    --cream: #fffaf0;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== 全域樣式重置 ===== */
 * {
-    /* 邊界外的空間設定為 0 */
     margin: 0;
-    /* 邊界內的空間設定為 0 */
     padding: 0;
-    /* box-sizing 設定為 border-box，讓寬度計算更直觀 */
     box-sizing: border-box;
 }
 
-/* 設定 body 的基礎樣式 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Body 與基礎樣式 ===== */
 body {
-    /* 使用系統預設字型 */
-    font-family: '微軟正黑體', 'Arial', sans-serif;
-    /* 背景色：淡綠色 */
-    background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 100%);
-    /* 最小高度設定為視窗高度 */
+    font-family: '微軟正黑體', '蘋果正黑體', 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, var(--lighter-green) 0%, var(--lighter-yellow) 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
     min-height: 100vh;
-    /* 文字顏色 */
-    color: #2d5016;
-    /* 行高設定為 1.6，讓文字更易閱讀 */
-    line-height: 1.6;
 }
 
-/* ===== 容器樣式 ===== */
-
-/* 主容器 */
-.container {
-    /* 最大寬度 1200px */
-    max-width: 1200px;
-    /* 置中對齐 */
-    margin: 0 auto;
-    /* 内邊距 */
-    padding: 20px;
-}
-
-/* ===== 頁頭樣式 ===== */
-
-.header {
-    /* 背景色：鮮綠色 */
-    background: linear-gradient(135deg, #4ade80 0%, #86efac 100%);
-    /* 内邊距 */
-    padding: 40px 20px;
-    /* 圓角邊框 */
-    border-radius: 20px;
-    /* 文字居中 */
-    text-align: center;
-    /* 下方邊距 */
-    margin-bottom: 40px;
-    /* 陰影效果 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    /* 顏色漸層轉換 */
-    transition: transform 0.3s ease;
-}
-
-/* 滑鼠懸停在頁頭時的效果 */
-.header:hover {
-    transform: translateY(-5px);
-}
-
-/* h1 標題樣式 */
-.header h1 {
-    /* 文字大小 */
-    font-size: 48px;
-    /* 文字顏色 */
-    color: #1b4d0e;
-    /* 下方邊距 */
-    margin-bottom: 10px;
-    /* 字體粗細 */
-    font-weight: bold;
-}
-
-/* 副標題樣式 */
-.subtitle {
-    /* 文字大小 */
-    font-size: 18px;
-    /* 文字顏色 */
-    color: #166534;
-    /* 透明度 */
-    opacity: 0.9;
-}
-
-/* ===== 卡片樣式 ===== */
-
-/* 卡片基礎樣式 */
-.card {
-    /* 背景色：白色 */
-    background: white;
-    /* 圓角邊框 */
-    border-radius: 15px;
-    /* 内邊距 */
-    padding: 30px;
-    /* 下方邊距 */
-    margin-bottom: 25px;
-    /* 陰影效果 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    /* 過度效果 */
-    transition: all 0.3s ease;
-    /* 上邊框裝飾 - 綠色 */
-    border-top: 5px solid #4ade80;
-}
-
-/* 滑鼠懸停在卡片上時的效果 */
-.card:hover {
-    /* 向上移動 */
-    transform: translateY(-8px);
-    /* 增加陰影 */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-/* 卡片中的 h2 標題 */
-.card h2 {
-    /* 文字大小 */
-    font-size: 28px;
-    /* 文字顏色：深綠色 */
-    color: #166534;
-    /* 下方邊距 */
-    margin-bottom: 20px;
-}
-
-/* ===== 簡介卡片 ===== */
-
-.intro-card {
-    /* 上邊框顏色改為黃色 */
-    border-top-color: #fbbf24;
-}
-
-.intro-card p {
-    /* 文字大小 */
-    font-size: 16px;
-    /* 行高 */
-    line-height: 1.8;
-    /* 文字顏色 */
-    color: #3d3d3d;
-}
-
-/* ===== 特色卡片 ===== */
-
-.features-card {
-    /* 上邊框顏色為綠色 */
-    border-top-color: #4ade80;
-}
-
-/* 特色列表樣式 */
-.feature-list {
-    /* 列表不顯示預設點 */
-    list-style: none;
-}
-
-/* 特色列表項目 */
-.feature-list li {
-    /* 下方邊距 */
-    margin-bottom: 15px;
-    /* 左邊邊距 */
-    padding-left: 30px;
-    /* 相對定位 */
-    position: relative;
-    /* 文字顏色 */
-    color: #3d3d3d;
-    /* 行高 */
-    line-height: 1.7;
-}
-
-/* 使用 ::before 偽元素添加自定義項目符號 */
-.feature-list li::before {
-    /* 內容為綠色圓點 */
-    content: "●";
-    /* 文字顏色 */
-    color: #4ade80;
-    /* 絕對定位 */
-    position: absolute;
-    /* 距左邊 10px */
+/* ===== 導覽列 (Navbar) ===== */
+.navbar {
+    position: fixed;
+    top: 0;
     left: 0;
-    /* 字體大小 */
-    font-size: 12px;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 245, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--primary-yellow);
 }
 
-/* ===== 常見品種卡片 ===== */
-
-.breeds-card {
-    /* 上邊框顏色為黃色 */
-    border-top-color: #fbbf24;
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* 品種網格佈局 */
-.breed-grid {
-    /* 使用 CSS Grid */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark-green);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    font-size: 2rem;
+    display: inline-block;
+}
+
+.logo-text {
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-green), var(--primary-yellow));
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-green);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* 手機版導覽列 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== Hero 區塊 ===== */
+.hero {
+    position: relative;
+    margin-top: 80px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 3rem 1.5rem;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(251, 191, 36, 0.2) 50%, rgba(255, 250, 245, 0.3) 100%);
+    z-index: -1;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 50%, var(--primary-yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-btn {
+    background: linear-gradient(135deg, var(--primary-green) 0%, #06b6d4 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    animation: slideInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4);
+}
+
+.hero-btn:active {
+    transform: translateY(-1px);
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 手機版 Hero ===== */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 100px;
+        min-height: 400px;
+        padding: 2rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* ===== 內容包裝器 ===== */
+.content-wrapper {
+    padding: 2rem 0;
+}
+
+/* ===== 區塊樣式 ===== */
+.section {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(209, 250, 229, 0.2) 100%);
+    margin: 1rem auto;
+    border-radius: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section:nth-child(even) {
+    background: linear-gradient(180deg, rgba(255, 250, 245, 0.5) 0%, rgba(254, 243, 199, 0.2) 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--dark-green);
+    margin-bottom: 0.75rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ===== 特色卡片網格 ===== */
+.features-grid {
     display: grid;
-    /* 2 列均等寬度 */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    /* 列間距 */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-/* 品種項目 */
-.breed-item {
-    /* 背景色：淡綠色 */
-    background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 100%);
-    /* 内邊距 */
-    padding: 20px;
-    /* 圓角 */
-    border-radius: 12px;
-    /* 邊框 */
-    border: 2px solid #4ade80;
-    /* 過度效果 */
-    transition: all 0.3s ease;
-}
-
-/* 滑鼠懸停在品種項目上的效果 */
-.breed-item:hover {
-    /* 背景色變深 */
-    background: linear-gradient(135deg, #dcfce7 0%, #fef08a 100%);
-    /* 邊框顏色變深 */
-    border-color: #22c55e;
-}
-
-/* 品種項目中的 h3 標題 */
-.breed-item h3 {
-    /* 文字大小 */
-    font-size: 18px;
-    /* 文字顏色 */
-    color: #166534;
-    /* 下方邊距 */
-    margin-bottom: 10px;
-}
-
-/* 品種項目中的段落 */
-.breed-item p {
-    /* 文字大小 */
-    font-size: 14px;
-    /* 文字顏色 */
-    color: #4b5563;
-}
-
-/* ===== 飼養注意事項卡片 ===== */
-
-.care-card {
-    /* 上邊框顏色為綠色 */
-    border-top-color: #4ade80;
-}
-
-/* 飼養提示容器 */
-.care-tips {
-    /* 使用 Grid 佈局 */
-    display: grid;
-    /* 2 列均等寬度 */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    /* 列間距和行間距 */
-    gap: 20px;
-}
-
-/* 單一提示項目 */
-.tip {
-    /* 背景色：淡黃色 */
-    background: #fffbeb;
-    /* 内邊距 */
-    padding: 20px;
-    /* 圓角 */
-    border-radius: 12px;
-    /* 邊框 */
-    border-left: 4px solid #fbbf24;
-    /* 過度效果 */
-    transition: all 0.3s ease;
-}
-
-/* 滑鼠懸停在提示上的效果 */
-.tip:hover {
-    /* 背景色變深 */
-    background: #fef3c7;
-    /* 向上移動 */
-    transform: translateY(-5px);
-}
-
-/* 提示中的 h3 標題 */
-.tip h3 {
-    /* 文字大小 */
-    font-size: 16px;
-    /* 文字顏色 */
-    color: #b45309;
-    /* 下方邊距 */
-    margin-bottom: 10px;
-    /* 字體粗細 */
-    font-weight: bold;
-}
-
-/* 提示中的段落 */
-.tip p {
-    /* 文字大小 */
-    font-size: 14px;
-    /* 文字顏色 */
-    color: #92400e;
-    /* 行高 */
-    line-height: 1.6;
-}
-
-/* ===== 互動卡片和按鈕 ===== */
-
-.interactive-card {
-    /* 上邊框顏色為黃色 */
-    border-top-color: #fbbf24;
-    /* 文字居中 */
+.feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid transparent;
+    border-top: 4px solid var(--primary-green);
     text-align: center;
 }
 
-.interactive-card p {
-    /* 文字大小 */
-    font-size: 16px;
-    /* 下方邊距 */
-    margin-bottom: 20px;
-    /* 文字顏色 */
-    color: #3d3d3d;
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-yellow);
 }
 
-/* 按鈕基礎樣式 */
-.btn {
-    /* 背景色：綠色 */
-    background: linear-gradient(135deg, #4ade80 0%, #86efac 100%);
-    /* 文字顏色：深綠 */
-    color: #1b4d0e;
-    /* 邊框：無 */
-    border: none;
-    /* 内邊距 */
-    padding: 14px 32px;
-    /* 文字大小 */
-    font-size: 16px;
-    /* 圓角 */
-    border-radius: 8px;
-    /* 游標改為指標 */
-    cursor: pointer;
-    /* 字體粗細 */
-    font-weight: bold;
-    /* 過度效果 */
-    transition: all 0.3s ease;
-    /* 陰影效果 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* 下方邊距 */
-    margin-bottom: 20px;
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    animation: bounce 2s infinite;
 }
 
-/* 滑鼠懸停或點擊按鈕時的效果 */
-.btn:hover,
-.btn:active {
-    /* 背景色變深 */
-    background: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
-    /* 增加陰影 */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    /* 向上移動 */
-    transform: translateY(-2px);
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
-/* 按鈕按下時的效果 */
-.btn:active {
-    /* 向下移動 */
-    transform: translateY(0);
-}
-
-/* 小知識框樣式 */
-.fact-box {
-    /* 背景色：淡綠色 */
-    background: #f0fdf4;
-    /* 邊框 */
-    border: 2px solid #4ade80;
-    /* 邊框圓角 */
-    border-radius: 10px;
-    /* 内邊距 */
-    padding: 20px;
-    /* 最小高度 */
-    min-height: 80px;
-    /* 文字大小 */
-    font-size: 16px;
-    /* 文字顏色 */
-    color: #166534;
-    /* 行高 */
+.feature-card p {
+    color: var(--text-light);
     line-height: 1.8;
-    /* 過度效果 */
-    transition: all 0.3s ease;
-    /* 預設隱藏內容 */
-    opacity: 0;
-    /* 預設高度為 0 */
-    max-height: 0;
-    /* 內容超出時隱藏 */
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ===== 品種卡片網格 ===== */
+.breeds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.breed-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 3px solid var(--light-green);
+}
+
+.breed-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-yellow);
+}
+
+.breed-image {
+    background: linear-gradient(135deg, var(--lighter-green) 0%, var(--lighter-yellow) 100%);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     overflow: hidden;
 }
 
-/* 小知識框顯示時的樣式 */
-.fact-box.show {
-    /* 透明度變為 1 */
-    opacity: 1;
-    /* 高度自動 */
-    max-height: 200px;
+.breed-image::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveGrid 20s linear infinite;
 }
 
-/* ===== 頁尾樣式 ===== */
+@keyframes moveGrid {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
 
-.footer {
-    /* 邊界上方 */
-    border-top: 2px solid #4ade80;
-    /* 背景色：淡綠色 */
-    background: linear-gradient(135deg, #f0fdf4 0%, #fef3c7 100%);
-    /* 内邊距 */
-    padding: 30px 20px;
-    /* 文字居中 */
+.breed-emoji {
+    font-size: 4rem;
+    position: relative;
+    z-index: 1;
+    animation: float 3s ease-in-out infinite;
+}
+
+.breed-content {
+    padding: 1.5rem;
+}
+
+.breed-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark-green);
+    margin-bottom: 0.75rem;
+}
+
+.breed-difficulty {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.difficulty-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.difficulty-badge {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: var(--light-yellow);
+    color: #92400e;
+}
+
+.difficulty-badge.easy {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.difficulty-badge.beginner {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.difficulty-badge.intermediate {
+    background: #fed7aa;
+    color: #9a3412;
+}
+
+.difficulty-badge.experienced {
+    background: #fbcfe8;
+    color: #9d174d;
+}
+
+.breed-intro {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.breed-features {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.breed-features li {
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.breed-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-weight: 900;
+}
+
+/* ===== 飼養重點卡片 ===== */
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.care-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-left: 5px solid var(--primary-yellow);
     text-align: center;
-    /* 邊界圓角 */
-    border-radius: 15px;
-    /* 上方邊距 */
-    margin-top: 40px;
-    /* 文字大小 */
-    font-size: 14px;
-    /* 文字顏色 */
-    color: #4b5563;
+}
+
+.care-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-left-color: var(--primary-green);
+}
+
+.care-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.care-card h3 {
+    font-size: 1.3rem;
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.care-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* ===== 小知識區塊 ===== */
+.facts-box {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--light-green);
+}
+
+.fact-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-green) 0%, #06b6d4 100%);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 1.5rem;
+}
+
+.fact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.fact-btn:active {
+    transform: translateY(0);
+}
+
+.fact-display {
+    background: linear-gradient(135deg, var(--lighter-green) 0%, var(--lighter-yellow) 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--primary-green);
+}
+
+.fact-display p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* ===== 頁尾 ===== */
+.footer {
+    background: linear-gradient(135deg, var(--dark-green) 0%, #047857 100%);
+    color: white;
+    padding: 3rem 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--light-yellow);
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--light-yellow);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 /* ===== 響應式設計 ===== */
-
-/* 當螢幕寬度小於 768px 時（平板和手機） */
 @media (max-width: 768px) {
-    /* h1 標題縮小 */
-    .header h1 {
-        font-size: 32px;
+    .section {
+        padding: 2rem 1rem;
+        margin: 0.5rem auto;
     }
 
-    /* 卡片的 h2 標題縮小 */
-    .card h2 {
-        font-size: 22px;
+    .section-title {
+        font-size: 1.8rem;
     }
 
-    /* 品種網格改為 1 列 */
-    .breed-grid {
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .features-grid,
+    .breeds-grid,
+    .care-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .breed-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .footer-content {
         grid-template-columns: 1fr;
     }
+}
 
-    /* 飼養提示改為 1 列 */
-    .care-tips {
-        grid-template-columns: 1fr;
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .feature-icon,
+    .care-icon {
+        font-size: 2.5rem;
+    }
+
+    .breed-emoji {
+        font-size: 2.5rem;
     }
 }
