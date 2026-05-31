@@ -17,12 +17,12 @@ const parrotFacts = [
 /* ===== 獲取 HTML 元素 ===== */
 
 // 獲取「顯示小知識」按鈕元素
-// 使用 document.getElementById() 找到 id 為 'knowBtn' 的按鈕
-const knowBtn = document.getElementById('knowBtn');
+// 使用 document.getElementById() 找到 id 為 'factBtn' 的按鈕
+const knowBtn = document.getElementById('factBtn');
 
 // 獲取用來顯示小知識的容器元素
-// 使用 document.getElementById() 找到 id 為 'factBox' 的 div
-const factBox = document.getElementById('factBox');
+// 使用 document.getElementById() 找到 id 為 'factDisplay' 的 div
+const factBox = document.getElementById('factDisplay');
 
 /* ===== 主要功能函式 ===== */
 
